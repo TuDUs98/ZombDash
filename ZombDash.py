@@ -358,7 +358,9 @@ def start_screen(difficulty):
                   "<создатели>",
                   f"сложность: {difficulty}",
                   "лучший рекорд:",
-                  f" <{record}>"]
+                  f" <{record}>",
+                  "",
+                  "<выйти>"]
 
     fon = pygame.transform.scale(pygame.image.load('data/Sprites/fon_6.jpg'), (width, height))
     screen.blit(fon, (0, 0))
@@ -403,6 +405,8 @@ def start_screen(difficulty):
                                     difficulty = 'легко'
                                     start_screen(difficulty)
                                     return difficulty
+                            elif i == 7:
+                                terminate()
 
             if event.type == pygame.QUIT:
                 terminate()
@@ -460,7 +464,7 @@ def end_screen(score, flag_of_record, difficulty):
                       "добро пожаловать в ульяновск",
                       f"ВАШ СЧЕТ: {score}",
                       "<заново>",
-                      "<вернуться в главное меню>",
+                      "<главное меню>",
                       "",
                       "<выйти из города>"]
         fon = pygame.transform.scale(pygame.image.load('data/Sprites/lenin.png'), (width, height))
@@ -469,7 +473,7 @@ def end_screen(score, flag_of_record, difficulty):
                       "!!!НОВЫЙ РЕКОРД!!!",
                       f"ВАШ СЧЕТ: {score}",
                       "<заново>",
-                      "<вернуться в главное меню>",
+                      "<главное меню>",
                       "",
                       "<выйти>"]
         fon = pygame.transform.scale(pygame.image.load('data/Sprites/fon_6.jpg'), (width, height))
@@ -478,7 +482,7 @@ def end_screen(score, flag_of_record, difficulty):
                       "!!!неНОВЫЙ РЕКОРД!!!",
                       f"ВАШ СЧЕТ: {score}",
                       "<заново>",
-                      "<вернуться в главное меню>",
+                      "<главное меню>",
                       "",
                       "<выйти>"]
         fon = pygame.transform.scale(pygame.image.load('data/Sprites/fon_6.jpg'), (width, height))
